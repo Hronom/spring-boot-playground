@@ -30,6 +30,7 @@ jobs:
       - name: Build and Release
         uses: qcastel/github-actions-maven-release@v1.12.39
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITREPO_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JAVA_HOME: /usr/lib/jvm/java-17-openjdk/
         with:
