@@ -10,7 +10,7 @@
 
 	<groupId>com.github.hronom</groupId>
 	<artifactId>spring-boot-playground</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>spring-boot-playground</name>
 	<description>Demo project for Spring Boot</description>
 
