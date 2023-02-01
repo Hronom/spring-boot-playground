@@ -1,9 +1,12 @@
+# Inspired by https://stackoverflow.com/a/73019565
 name: build test release
 
 on:
   push:
     branches:
       - master
+
+permissions: write-all
 
 jobs:
   build:
@@ -22,13 +25,14 @@ jobs:
           cache: 'maven'
           server-id: github
 
-      - name: Build and Release
-        uses: qcastel/github-actions-maven-release@v1.12.39
+      - name: View java
+        run: ls /usr/lib/jvm
+
+      - name: Configure Git user
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+      - name: Publish JAR
+        run: ./mvnw -B release:prepare release:perform
         env:
-          GITREPO_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JAVA_HOME: /usr/lib/jvm/java-17-amazon-corretto/
-        with:
-          version-minor: true
-          release-branch-name: "master"
-          git-release-bot-name: "release-bot"
-          git-release-bot-email: "hronom@gmail.com"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
