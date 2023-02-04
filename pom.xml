@@ -10,7 +10,7 @@
 
 	<groupId>com.github.hronom</groupId>
 	<artifactId>spring-boot-playground</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.5</version>
 	<name>spring-boot-playground</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -73,7 +73,7 @@
 		<connection>scm:git:${project.scm.url}</connection>
 		<developerConnection>scm:git:${project.scm.url}</developerConnection>
 		<url>https://github.com/hronom/spring-boot-playground.git</url>
-		<tag>spring-boot-playground-0.0.2</tag>
+		<tag>spring-boot-playground-0.0.5</tag>
 	</scm>
 
 	<build>
